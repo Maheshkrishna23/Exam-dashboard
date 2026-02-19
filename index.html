@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Exam Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Smart Exam & Interview Preparation</h1>
+
+    <label>Select Mode:</label>
+    <select id="mode">
+        <option value="interview">Interview</option>
+        <option value="gate">GATE</option>
+        <option value="exam">Semester Exam</option>
+        <option value="aptitude">Aptitude</option>
+    </select>
+
+    <label>Select Branch:</label>
+    <select id="branch">
+        <option value="cse">CSE</option>
+        <option value="ece">ECE</option>
+        <option value="it">IT</option>
+    </select>
+
+    <button onclick="startQuiz()">Start Quiz</button>
+</div>
+
+<script>
+function startQuiz() {
+    const mode = document.getElementById("mode").value;
+    const branch = document.getElementById("branch").value;
+
+    localStorage.setItem("mode", mode);
+    localStorage.setItem("branch", branch);
+
+    window.location.href = "quiz.html";
+}
+</script>
+
+</body>
+</html>
